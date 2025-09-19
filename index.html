@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Hero Marquee</title>
+    <style>
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-inner {
+    display: flex;
+    width: max-content;
+    animation: scroll 50s linear infinite;
+background-color:white;
+}
+
+.marquee-inner img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+padding:2px;
+
+
+
+
+border-radius:20px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-3650px); /* 300px * 12 = 3600px */
+    }
+}
+    </style>
+</head>
+<body>
+   
+
+    <div class="marquee">
+        <div class="marquee-inner">
+            <img src="https://i.pinimg.com/474x/16/b5/66/16b566414161eb42cce1731efe47577e.jpg" alt="Image 1">
+            <img src="https://i.pinimg.com/474x/0d/4b/2e/0d4b2e125ac72d9b4e1ee942f7510414.jpg" alt="Image 2">
+            <img src="https://i.pinimg.com/474x/eb/28/3f/eb283f4f8de14b5d65fc0ae30a7dbf28.jpg" alt="Image 3">
+            <img src="https://i.pinimg.com/474x/65/3f/f0/653ff035b9afed2e5c9b2b7324d30aeb.jpg" alt="Image 4">
+            <img src="https://i.pinimg.com/474x/47/50/74/4750743a19249b48d20025d5d0706c5f.jpg" alt="Image 5">
+            <img src="https://i.pinimg.com/474x/dc/8d/d2/dc8dd2063da084a8841a90600b11cf51.jpg" alt="Image 6">
+            <img src="https://i.pinimg.com/474x/c9/f6/b4/c9f6b40862bfe3421097bf82cea9057b.jpg" alt="Image 7">
+            <img src="https://i.pinimg.com/474x/4a/ee/be/4aeebe0d559d9d47676dda48aca77ccb.jpg" alt="Image 8">
+            <img src="https://i.pinimg.com/474x/b0/0c/e1/b00ce12aa59c79b05414a20dfbfa8a5b.jpg" alt="Image 9">
+            <img src="https://i.pinimg.com/474x/42/1b/31/421b31ff2ca275964dfb1295b472e5ef.jpg" alt="Image 10">
+            <img src="https://i.pinimg.com/474x/b8/57/af/b857af576855672550edbe36c93fac5f.jpg" alt="Image 11">
+            <img src="https://i.pinimg.com/474x/7d/fe/af/7dfeafd1e4c4d0e0e56c18c7fdbafa3c.jpg" alt="Image 12">
+            <!-- Duplicate images for smooth scrolling -->
+            <img src="https://i.pinimg.com/474x/16/b5/66/16b566414161eb42cce1731efe47577e.jpg" alt="Image 1">
+            <img src="https://i.pinimg.com/474x/0d/4b/2e/0d4b2e125ac72d9b4e1ee942f7510414.jpg" alt="Image 2">
+            <img src="https://i.pinimg.com/474x/eb/28/3f/eb283f4f8de14b5d65fc0ae30a7dbf28.jpg" alt="Image 3">
+            <img src="https://i.pinimg.com/474x/65/3f/f0/653ff035b9afed2e5c9b2b7324d30aeb.jpg" alt="Image 4">
+            <img src="https://i.pinimg.com/474x/47/50/74/4750743a19249b48d20025d5d0706c5f.jpg" alt="Image 5">
+            <img src="https://i.pinimg.com/474x/dc/8d/d2/dc8dd2063da084a8841a90600b11cf51.jpg" alt="Image 6">
+            <img src="https://i.pinimg.com/474x/c9/f6/b4/c9f6b40862bfe3421097bf82cea9057b.jpg" alt="Image 7">
+            <img src="https://i.pinimg.com/474x/4a/ee/be/4aeebe0d559d9d47676dda48aca77ccb.jpg" alt="Image 8">
+            <img src="https://i.pinimg.com/474x/b0/0c/e1/b00ce12aa59c79b05414a20dfbfa8a5b.jpg" alt="Image 9">
+            <img src="https://i.pinimg.com/474x/42/1b/31/421b31ff2ca275964dfb1295b472e5ef.jpg" alt="Image 10">
+            <img src="https://i.pinimg.com/474x/b8/57/af/b857af576855672550edbe36c93fac5f.jpg" alt="Image 11">
+            <img src="https://i.pinimg.com/474x/7d/fe/af/7dfeafd1e4c4d0e0e56c18c7fdbafa3c.jpg" alt="Image 12">
+        </div>
+    </div>
+    <script src="scripts.js">
+ // scripts.js
+document.addEventListener('DOMContentLoaded', () => {
+    const marqueeInner = document.querySelector('.marquee-inner');
+    const images = Array.from(marqueeInner.children);
+
+    // Clone the images to create a seamless loop
+    images.forEach(image => {
+        const clone = image.cloneNode(true);
+        marqueeInner.appendChild(clone);
+    });
+});
+
+
+
+    </script>
+</body>
+</html>
